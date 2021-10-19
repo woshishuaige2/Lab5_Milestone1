@@ -3,7 +3,9 @@ package com.example.lab5_milestone1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,8 +36,15 @@ public class login extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent (this, MainActivity.class);
-        startActivity(intent);
+        super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.logOut){
+            Intent intent = new Intent (this, MainActivity.class);
+            SharedPreferences sharedPreferences = getSharedPreferences("d.gong.lab5", Context.MODE_PRIVATE);
+            sharedPreferences.edit().remove(MainActivity.usernameKey).apply();
+            startActivity(intent);
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

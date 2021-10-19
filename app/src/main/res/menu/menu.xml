@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/file"
+    <item android:id="@+id/logOut"
         android:title="Logout"
         android:onClick="onOptionsItemSelected">
 
         <!-- "file" submenu -->
     </item>
 
-    <item android:id="@+id/file2"
+    <item android:id="@+id/addNote"
         android:title="Add note" >
         <!-- "file" submenu -->
     </item>

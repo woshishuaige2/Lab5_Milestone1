@@ -11,10 +11,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    static String usernameKey = "username";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("d.gong.lab5",Context.MODE_PRIVATE);
+
+        if (!sharedPreferences.getString(usernameKey,"").equals("")){
+            String username = sharedPreferences.getString(usernameKey, "");
+            Intent intent = new Intent(this, login.class);
+            startActivity(intent);
+        }
+        else {
+            setContentView(R.layout.activity_main);
+        }
 
 
     }
