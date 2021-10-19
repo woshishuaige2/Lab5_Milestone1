@@ -1,5 +1,9 @@
+package com.example.lab5_milestone1;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.lab5_milestone1.Note;
 
 import java.util.ArrayList;
 

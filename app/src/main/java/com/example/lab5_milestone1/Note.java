@@ -1,3 +1,7 @@
+package com.example.lab5_milestone1;
+
+import android.os.Bundle;
+
 public class Note {
     private String date;
     private String username;
@@ -9,8 +13,8 @@ public class Note {
         this.username = username;
         this.title = title;
         this.content = content;
-
     }
+
 
     public String getDate(){
         return date;
