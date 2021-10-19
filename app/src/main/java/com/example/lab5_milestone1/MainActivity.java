@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-
         SharedPreferences sharedPreferences = getSharedPreferences("d.gong.lab5",Context.MODE_PRIVATE);
 
         if (!sharedPreferences.getString(usernameKey,"").equals("")){
             String username = sharedPreferences.getString(usernameKey, "");
             Intent intent = new Intent(this, login.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         }
         else {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         String username = usernameT.getText().toString();
         String password = passwordT.getText().toString();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("lab5_milestone1", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("d.gong.lab5", Context.MODE_PRIVATE);
         sharedPreferences.edit().putString("username", username).apply();
 
         goToActivity2(username);
