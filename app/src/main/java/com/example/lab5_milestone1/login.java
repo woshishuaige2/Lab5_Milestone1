@@ -33,7 +33,7 @@ public class login extends AppCompatActivity {
 
         welcome = (TextView) findViewById(R.id.welcome);
         Intent intent = getIntent();
-        String str = intent.getStringExtra("username");
+        String str = intent.getStringExtra("message");
         welcome.setText("Welcome " + str + "!");
 
         Context context = getApplicationContext();
@@ -47,8 +47,12 @@ public class login extends AppCompatActivity {
         }
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayNotes);
-        ListView listView = (ListView) findViewById(R.id.notesListView);
+        ListView listView;
+        int i = R.id.notesListView;
+        listView = (ListView) findViewById(i);
         listView.setAdapter(adapter);
+
+        System.out.println();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,8 +85,7 @@ public class login extends AppCompatActivity {
         }
         if (item.getItemId() == R.id.addNote){
             Intent intent = new Intent (this, NoteActivity.class);
-            SharedPreferences sharedPreferences = getSharedPreferences("d.gong.lab5", Context.MODE_PRIVATE);
-            sharedPreferences.edit().remove(MainActivity.usernameKey).apply();
+            intent.putExtra("noteid", -1);
             startActivity(intent);
             return true;
         }

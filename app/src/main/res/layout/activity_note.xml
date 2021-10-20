@@ -17,15 +17,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ListView
-        android:id="@+id/notesListView"
-        android:layout_width="279dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="63dp"
-        android:layout_marginBottom="301dp"
-        app:layout_constraintBottom_toTopOf="@+id/save"
-        app:layout_constraintStart_toStartOf="@+id/note"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <ListView-->
+<!--        android:id="@+id/notesListView"-->
+<!--        android:layout_width="279dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="63dp"-->
+<!--        android:layout_marginBottom="301dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/save"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/note"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <EditText
         android:id="@+id/note"
